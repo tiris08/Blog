@@ -1,14 +1,17 @@
 <h1><%= @article.title %></h1>
 
 <p><%= @article.body %></p>
-
+<div>
   <%= link_to "Edit", edit_article_path(@article), class: "btn btn-secondary" %>
   <%= link_to "Destroy", article_path(@article), class:"btn btn-outline-danger",
                   method: :delete,
                   data: { confirm: "Are you sure?" } %>
-
+</div>
+              
+<br>
 <h3>Comments</h3>
 <%= render @article.comments %>
 
 <h3>Add a comment:</h3>
 <%= render 'comments/form' %>
+<br/>
