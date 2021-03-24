@@ -1,10 +1,12 @@
 <h1>My articles</h1>
 
-<ul>
+
   <% @articles.each do |a| %>
-    <li>
-    <%= link_to a.title, a %>
-    </li>
-   <% end %> 
-</ul>
-<%= link_to "New Article", new_article_path %>
+    <div class="well">
+      <br/>
+      <h3><%= a.title %></h3>
+      <p><%= a.body %></p>
+      <%= link_to 'Read More', a, class: "btn btn-secondary" %>
+    </div>
+  <% end %> 
+
